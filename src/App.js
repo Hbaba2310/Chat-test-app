@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 
+require("dotenv").config();
+
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -10,7 +12,7 @@ import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyBiZ0SWLC45FcKiiTcDp_879-n5cdTyLdk",
+  apiKey: process.env.API_KEY,
   authDomain: "chat-app-9d8b5.firebaseapp.com",
   projectId: "chat-app-9d8b5",
   storageBucket: "chat-app-9d8b5.appspot.com",
